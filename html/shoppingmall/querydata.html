@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0">
+	<title>查询数据</title>
+	<link rel="stylesheet" href="../../css/common/reset.css">
+	<link rel="stylesheet" href="../../css/common/common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/private/search.css"/>
+	<script src="../../js/lib/rem.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div class="screen">
+	<header>
+		<h1>查询数据</h1>
+		<!--<a class="u_edit" href="#">编辑</a>-->
+	</header>
+	<div class="main">
+		<!--主要内容部分-->
+
+		<div class="search-box">
+		    <div class="search_input">
+		        <input type="text" class="search-val"><input type="button" value="查询" class="search-btn">
+		
+		    </div>
+		    <div class="result_box">
+		
+		    </div>
+		
+		
+		</div>
+
+	</div>
+	<footer>
+		<ul>
+			<li>
+				<a href="mallIndex.html">
+					<div><img src="../../images/shouye-ct.png" alt=""></div>
+					<p>合链商城</p>
+				</a>				
+			</li>
+			<li>
+				<a href="customerservice.html">
+					<div><img src="../../images/kefu-ct.png" alt=""></div>
+					<p>区块列表</p>
+				</a>				
+			</li>
+			<li class="nowpage">
+				<a href="">
+					<div><img src="../../images/gouwuche-xz.png" alt=""></div>
+					<p>查询数据</p>
+				</a>				
+			</li>
+			<li>
+				<a href="../center/center.html">
+					<div><img src="../../images/gerenzhongxin-ct.png" alt=""></div>
+					<p>我的</p>
+				</a>				
+			</li>
+		</ul>
+	</footer>
+</div>
+<script type="text/javascript" src="../../js/lib/zepto.min.js"></script>
+<script type="text/javascript" src="../../js/lib/fastclick.js"></script>
+<!--<script src="../../js/common/common.js" type="text/javascript" charset="utf-8"></script>-->
+<script src="../../js/common/base64.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/common/jsonReformate.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    //根据哈希 找数据
+    $('.search-btn').on('click',function(){
+        var searchVal = $('.search-val').val();
+        $('.result_box').html('')
+        $.ajax({
+            url:  "http://192.168.100.17:1111/shop-service/api/block/getDataByHash",
+            type: "post",
+            dataType: 'json',
+            data: {
+                hash: '\"'+searchVal+'\"'
+            },
+            async: true,
+            success: function (res) {
+            	console.log(res);
+                if(res.errorCode==0){
+                    var data = res.data.result.result.data;
+                    console.log(data);
+//                解码
+                    var succ_data =  utf8to16(base64decode(data));
+                    var succ_data_formate = formatJson(succ_data);
+                    console.log(succ_data)
+                    console.log(succ_data_formate);
+                    console.log($(this))
+                    $('.result_box').html('<pre>'+succ_data_formate+'</pre>');
+                }else if(res.errorCode==-2){
+                	alert("请重新登陆");
+                	window.location.href="../center/login.html"
+                }
+                else{
+                    alert(res.message);
+                }
+
+            },
+            error: function (err) {
+                console.log(err)
+                alert("获取数据失败!");
+            }
+        });
+
+    })
+
+
+
+</script>
+<script>
+	/*fastclick解决移动端点击延迟的问题*/
+	if ('addEventListener' in document) {
+	    document.addEventListener('DOMContentLoaded', function() {
+	        FastClick.attach(document.body);
+	    }, false);
+	}
+</script>
+</body>
+</html>

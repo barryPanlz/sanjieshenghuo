@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>普通会员我的推荐</title>
+		<link rel="stylesheet" type="text/css" href="../../css/common/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/common/common.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/private/myaccountant.css" />
+		<script src="../../js/lib/rem.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<header>
+			<h1>我的推荐</h1>
+			<a class="u_back" href="javascript:history.go(-1)">返回</a>
+		</header>
+		<div class="main no_footer_main">
+			<div class="b_box b_box1">
+				<ul>
+					<li class="border_active">
+						<p class="txt">一级推荐</p>
+						<p class="num"><span>1000</span>人</p>
+					</li>
+					<li class="border_active">
+						<p class="txt">二级推荐</p>
+						<p class="num"><span>1000</span>人</p>
+					</li>
+					<li>
+						<p class="txt">三级推荐</p>
+						<p class="num"><span>1000</span>人</p>
+					</li>
+				</ul>
+			</div>
+
+			<div class="acc_box">
+				<div class="z_d">
+					<p>推荐记录<span>（50）</span></p>
+				</div>
+				<div class="z_list z_list2">
+					<ul class="z_tit">
+						<li class="t1">推荐对象</li>
+						<li class="j1 z_type">
+							<span>身份类型</span>
+							<img src="../../images/downarrow.png" />
+							<div class="mark">
+								<div class="m_box m_type">
+									<span></span>
+									<div>全部</div>
+									<div>普通会员</div>
+									<div>钻石会员</div>
+									<div>店铺会员</div>
+									<div>供应商</div>
+								</div>
+							</div>
+						</li>
+						<li class="s1 li_rank">
+							<span>推荐等级</span>
+							<img src="../../images/downarrow.png" />
+							<div class="mark">
+								<div class="m_box m_rank">
+									<span></span>
+									<div>全部</div>
+									<div>一级</div>
+									<div>二级</div>
+									<div>三级</div>
+								</div>
+							</div>
+						</li>
+						<li class="s2">注册时间</li>
+					</ul>
+				</div>
+
+				<div class="z_li g_li">
+					<ul>
+						<li class="">张三</li>
+						<li class="">普通会员</li>
+						<li class="">一级</li>
+						<li class="">今天<span>07:33</span></li>
+					</ul>
+				</div>
+
+				<div class="z_li g_li">
+					<ul>
+						<li class="">李四</li>
+						<li class="">代理商</li>
+						<li class="">普通会员</li>
+						<li class="">今天<span>07:33</span></li>
+					</ul>
+				</div>
+
+				<div class="z_li g_li">
+					<ul>
+						<li class="">消费</li>
+						<li class="">普通会员</li>
+						<li class="">一级</li>
+						<li class="">周三<span>07:33</span></li>
+					</ul>
+				</div>
+
+				<div class="z_li g_li">
+					<ul>
+						<li class="">兑换</li>
+						<li class="">普通会员</li>
+						<li class="">一级</li>
+						<li class="">今天<span>07:33</span></li>
+					</ul>
+				</div>
+
+				<div class="z_li g_li">
+					<ul>
+						<li class="">河南省商丘我的村</li>
+						<li class="">普通会员</li>
+						<li class="">一级</li>
+						<li class="">周一<span>10-18</span></li>
+					</ul>
+				</div>
+
+				<div class="z_li g_li">
+					<ul>
+						<li class="">河南省商丘我的村</li>
+						<li class="">普通会员</li>
+						<li class="">一级</li>
+						<li class="">周一<span>10-18</span></li>
+					</ul>
+				</div>
+
+				<div class="z_li g_li">
+					<ul>
+						<li class="">河南省商丘我的村</li>
+						<li class="">普通会员</li>
+						<li class="">一级</li>
+						<li class="">周一<span>10-18</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="../../js/lib/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$('.z_type span').click(function() {
+				$('.m_type').show();
+			})
+			$('.li_rank span').click(function() {
+				$('.m_rank').show();
+			})
+			$('.m_type,.m_rank').children('div').click(function() {
+				$('.m_box').hide();
+			})
+		</script>
+	</body>
+
+</html>

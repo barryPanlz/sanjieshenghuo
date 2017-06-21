@@ -1,0 +1,87 @@
+高菁：
+
+商城：
+
+添加地址，修改地址：addaddress.html
+商品分类：goodsclassfy.html
+
+会员中心：
+
+关于我们 aboutus.html
+注册协议：agreement.html
+个人中心：center.html
+客服咨询：customerservice.html
+找回密码：findpwd.html
+分享注册：invitationregist.html
+登录：login.html
+修改密码：modifypwd.html
+新手上路：newcomers.html
+注册：regist.html
+分享邀请：shareinvitation.html
+账户设置：accountsetting.html
+安全中心:securitycenter.html
+
+生活：
+
+全部分类：allclassfy.html
+区域选择：areaselection.html
+
+
+
+潘立志{
+商城：【
+提交订单 suborder.html 
+商城订单 shoporder.html 
+店铺订单 suborder.html 
+商城列表：goodslist.html
+商城购物车：shopcar.html
+商城空购物车：kongshopcar.html
+】
+转账：transfer.html
+}
+
+周文威
+{
+    商城：
+    商城的详情页面：shopDetails.html
+    商城的结算页面：shopSettle.html
+    
+    会员中心：
+    
+    普通会员我的账房：generalAccountant.html
+    普通会员我的推荐：generalRecommend.html
+    普通会员我的充值：generalPay.html
+    
+    代理商我的账房：agentAccountant.html
+    代理商我辖区的商铺：agentStore.html
+    
+    商铺我的账房:storeAccountant.html
+    商铺我的充值：storePay.html
+    
+    供应商我的账房：supplieAccountant.html
+    
+    
+    
+于涛涛{
+商城：
+商城-收货地址   address.html
+合链商城首页   mallIndex.html
+商城-付款失败   payfail.html
+商城-付款成功   paysuccess.html
+会员中心：
+代理商-提现   agentWithdrawal.html
+代理商-提现成功  agentWithdrawalSuccess.html
+普通会员-充值失败  memberechargeFail.html
+普通会员-充值成功   memberRecharge.html
+普通会员-转账    memberTranfer.html 
+店铺-充值成功  storeRecharge.html
+店铺-充值失败 storerechargeFail.html
+店铺-转账  storeTranfer.html
+店铺-提现   storeWithdrawal.html
+店铺-提现成功  storeWithdrawalSuccess.html
+供应商-提现  supplierWithdrawal.html
+供应商-提现成功   supplierWithdrawalSuccess.html
+升级钻石会员   upgradeDiamond.html
+升级钻石会员成功 upgradeSuc.html 
+}
+

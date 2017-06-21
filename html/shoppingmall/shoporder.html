@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0">
+	<meta name="format-detection" content="telephone=no" />
+	<title>商城订单</title>
+	<script src="../../js/lib/rem.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="../../css/common/reset.css">
+	<link rel="stylesheet" href="../../css/common/common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/private/shoporder.css"/>
+</head>
+<body>
+<div class="screen">
+	<header>
+		<a class="u_back" href="javascript:history.go(-1);">列表</a>
+		<h1>商城订单(<span>3</span>)</h1>
+		<a class="u_search u_shuaxin" href="">搜索</a>
+	</header>
+	<div class="main no_footer_main">
+		<div class="sor_top">
+			<a class="color_red" href=""><span>全部(</span><span>3</span><span>)</span></a>
+			<!--<a href=""><span>待付款(</span><span>3</span><span>)</span></a>
+			<a href=""><span>待收款(</span><span>3</span><span>)</span></a>
+			<a href=""><span>已完成(</span><span>3</span><span>)</span></a>-->
+		</div>
+		<div class="sor_center zichan_wrap">
+			
+		
+		</div>
+	</div>
+</div>
+<div class="sr_model_wrap">
+	<div class="sr_model_wrap1">
+		<div class="sr_model">
+			<li>确定发货？</li>
+			<li class="sr_model_li">
+				<span>快递公司</span>
+				<select name="">
+					<option value="">请输入快递公司</option>
+					<option value="">圆通</option>
+					<option value="">申通</option>
+					<option value="">韵达</option>
+				</select>
+			</li>
+			<li class="sr_model_li">
+				<span>快递单号</span>
+				<input type="number" name="" id="" value="" placeholder="请输入快递单号" />
+			</li>
+		</div>
+		<li class="sr_model_sub_wrap">
+			<button>
+				取消
+			</button>
+			<button>
+				确定
+			</button>
+		</li>
+	</div>
+</div>
+<script type="text/javascript" src="../../js/lib/zepto.min.js"></script>
+<!--<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>-->
+<script type="text/javascript" src="../../js/lib/fastclick.js"></script>
+<script src="../../js/common/handlebars.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/common/common.js" type="text/javascript" charset="utf-8"></script>
+<script id="tpl" type="text/x-handlebars-template">
+    {{#each this}}
+    <div class="sor_ce_order">
+		<div class="sor_ce_order_top">
+			<span>订单号：</span>
+			<span>{{order_no}}</span>
+			<span>{{add_time}}</span>
+		</div>
+		<ul class="sor_ce_order_ul">
+            {{#each shopGoodsList}}
+	            <li>
+					<a href="shopDetails.html">
+						<img src="../../images/dameinv.png"/>
+						<div class="sor_ce_li_right">
+							<p>{{goods_name}}</p>
+							<p class="sor_ce_li_p2">
+								<span>颜色：</span>
+								<span>白色</span>
+								<span>尺码：</span>
+								<span>38</span></p>
+							<p class="sor_ce_li_p3">
+								<span>{{pay_price}}</span>
+								<span>合链币</span>
+								<span>数量 x<i>{{goods_number}}</i></span>
+							</p>
+						</div>
+					</a>
+				</li>
+            {{/each}}
+            
+            <div class="sor_ce_order_bottom" style="height: 2.7rem; width: 100%;">
+					<div class="sor_ce_order_top sor_ce_order_top1" style="height: 1.4rem;">
+						<span>哈希值：</span>
+						<i >
+							{{trade_hash}}
+						</i>
+					</div>
+					<p>
+						<span>合计：</span>
+						<i class="big_i">{{order_amount}}</i>
+						<span style="margin-right:0.3rem ;">合链币</span>
+					</p>
+					<li>
+						<span style="margin-right:0.3rem ;">
+							<div id="order_no" style="opacity:0">{{order_no}}</div>
+            				<div id="order_amount" style="opacity:0">{{order_amount}}</div>
+							{{#equal order_status 1}}
+				            <button id="buy">立即支付</button>
+				            {{/equal}}
+				            {{#equal order_status 2}}
+				            <button id="buy">已支付</button>
+				            {{/equal}}
+				            {{#equal order_status 3}}
+				            <button id="buy">支付成功</button>
+				            {{/equal}}
+				            {{#equal order_status 10}}
+				            <button id="buy">处理中</button>
+				            {{/equal}}
+						</span>
+					</li>
+			</div>
+		</div>
+        {{/each}}    
+</script>
+<script>
+	/*fastclick解决移动端点击延迟的问题*/
+	if ('addEventListener' in document) {
+	    document.addEventListener('DOMContentLoaded', function() {
+	        FastClick.attach(document.body);
+	    }, false);
+	}
+	
+	$(".sor_top").find("a").click(function(){
+		$(this).addClass("color_red");
+		$(this).siblings().removeClass("color_red");
+		return false;
+	});
+	$.ajax({
+        type: "post",
+        dataType: 'json',
+        data: {
+            CSESSIONID: scessinoId,
+        },
+        url: url + "/api/rest/shopOrder/listPageShopOrder",
+//        url: "json/1.json",
+        async: true,
+        success: function (res) {
+            console.log(res);
+            if (res.errorCode == "-2") {
+                window.location.href = '../center/login.html';
+            }
+            data = res.data.pageInfo.list;
+            var source = $("#tpl").html();
+            var template = Handlebars.compile(source);
+            var context = data;
+            var html = template(context);
+            $(".zichan_wrap").html(html);
+           }
+     });
+     //   立即支付
+     $(".sor_center").delegate("#buy", "click", function(){
+	   if($('#buy').text()=='处理中'){
+            alert('正在处理中 请稍后');
+            return
+        }
+        var order_no = $(this).prev().prev().text();
+        var order_amount = $(this).prev().text();
+        console.log(order_no,order_amount);
+
+        $.ajax({
+            type: "post",
+            dataType: 'json',
+            data: {
+                CSESSIONID: scessinoId,
+                order_no: order_no,
+                order_amount: order_amount
+            },
+            url: url + "/api/rest/shopOrder/payNow",
+            async: true,
+            success: function (res) {
+                if(res.errorCode==10){
+                    $('#buy').text('处理中');
+                }else if(res.errorCode==0){
+                    alert("支付处理中，请稍后");
+                    window.location.href='';
+                }else{
+                    alert(res.message);
+                }
+            },
+            error: function (err) {
+                alert(err);
+            }
+        });
+	});
+    
+    
+    
+    //是否相等  equal
+    Handlebars.registerHelper("equal", function (v1, v2, options) {
+        if (v1 == v2) {
+            //满足添加继续执行
+            return options.fn(this);
+        } else {
+            //不满足条件执行{{else}}部分
+            return options.inverse(this);
+        }
+    });
+
+</script>
+</body>
+</html>

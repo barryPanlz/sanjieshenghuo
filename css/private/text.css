@@ -1,0 +1,46 @@
+
+/* 注册协议agreement.html,新手上路newcomers.html------------------ */
+.no_footer_main{
+	bottom: 0;
+}
+.white_main{
+	background: #fff;
+}
+.main{
+	padding: 0 0.3rem;
+	box-sizing: border-box;
+}
+.title{
+	font-size: .28rem;
+	margin-top: .66rem;
+	margin-bottom: .56rem;
+	text-align: center;
+	color: #f01c1c;
+}
+.little_title{
+	color: #282828;
+	font-size: .24rem;
+	margin:.40rem 0 .2rem 0;
+}
+.content{
+	color: #848484;
+	font-size: .20rem;
+}
+/* 关于我们aboutus.html,注册分享invitationregist.html--------------------- */
+.img{
+	margin-bottom: .32rem;
+	margin:.2rem 0;
+}
+.img img{
+	width: 100%;
+}
+.imgc{
+	width:2.46rem;
+	margin:0 auto;
+}
+.imgc img{
+	width:100%;
+}
+.imgc img:first-child{
+	margin-top:.2rem;
+}

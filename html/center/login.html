@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0">
+	<title>登录</title>
+	<link rel="stylesheet" href="../../css/common/reset.css">
+	<link rel="stylesheet" href="../../css/common/common.css">
+	<link rel="stylesheet" href="../../css/private/form.css">
+	<script src="../../js/lib/rem.js" type="text/javascript" charset="utf-8"></script> 
+</head>
+<body>
+<div class="screen">
+	<header>
+		<h1>登录</h1>
+		<a class="u_back" href="#" onclick="window.history.go(-1);return false;">返回</a>
+	</header>
+	<div class="main no_footer_main white_main">
+		<div class="logo">
+			<img src="../../images/logo.png">
+		</div>
+		<form action="">
+			<ul class="regist_box login_box">
+				<li>
+					<input class="username" type="text" placeholder="输入手机号">
+				</li>
+				<li>
+					<input class="passw" type="password" placeholder="输入密码">
+				</li>
+				<!--<li>
+					<input class="code_text" type="text" placeholder="输入验证码">
+					<div class="code"><img src="../../images/yanzhengma.png" alt=""></div>
+				</li>				-->
+			</ul>
+		</form>
+		<div class="u_button regist_button login_btn"><input type="submit" value="登录"></div>
+		<div class="login_bottom">
+			<p class="go_login">没有帐号?<a href="regist.html">马上注册</a></p>
+			<a class="go_forgetpwd" href="findpwd.html">忘记密码？</a>
+		</div>		
+		<p class="version">合链商城v1.0</p>
+	</div>
+	<!--这里是验证错误时的弹出框-->
+	<div class="error_tip">手机号码格式不正确</div>
+</div>
+<script type="text/javascript" src="../../js/lib/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../../js/lib/fastclick.js"></script>
+<script src="../../js/common/common.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	/*fastclick解决移动端点击延迟的问题*/
+	if ('addEventListener' in document) {
+	    document.addEventListener('DOMContentLoaded', function() {
+	        FastClick.attach(document.body);
+	    }, false);
+	}
+	//登录
+
+$('.login_btn').on('click', function () {
+    $(this).addClass('btnGray');
+    $(this).attr("disabled", "disabled");
+    $(this).attr("disabled","disabled");
+    var account = $('.username').val();
+    var pass = $('.passw').val();
+    jQuery.support.cors = true
+    $.ajax({
+        url: url + "/api/user/login",
+        type: 'post',
+        data: {
+            "account": account,
+            "password": pass
+        },
+        crossDomain: true == !(document.all),
+        async:true,
+        dataType: 'json',
+        success: function (res) {
+            if (res.errorCode == 0) {
+                $(this).removeClass('btnGray');
+                $(this).removeAttr("disabled");
+                $('.loginBtn').removeClass('btnGray');
+                $('.loginBtn').removeAttr("disabled");
+
+                alert('登录成功！');
+                var csession = res.data.CSESSIONID.replace(/(^\s+)|(\s+$)/g,"");
+                var role_id = res.data.role_id;
+                console.log(role_id,csession);
+
+                sessionStorage.setItem("CSESSIONID",csession);
+                sessionStorage.setItem("role_id",role_id);
+                window.location.href = '../shoppingmall/mallIndex.html';
+            } else {
+                alert(res.message);
+            }
+        },
+        error: function (err) {
+            alert(err.meassage);
+            $('.loginBtn').removeClass('btnGray');
+            $('.loginBtn').removeAttr("disabled");
+        }
+
+    });
+});
+	/*点击登录按钮*/
+//	$('.login_btn').click(function(event) {
+//		/*如果表单填写错误，执行以下js,则显示错误提示,显示2s后消失，显示时改变错误提示的内容即可*/
+//		if(!$('.error_tip').is(":animated")){
+//			$('.error_tip').show(100, function() {
+//				$('.error_tip').html('手机号码输入错误');//这里输入要提示的内容
+//				$('.error_tip').animate({
+//					opacity: 1,
+//					},1000, function() {
+//					window.setTimeout(function(){
+//						$('.error_tip').animate({
+//							opacity: 0,
+//							},
+//							1000, function() {
+//							$('.error_tip').hide();
+//						});
+//					}, 2000)
+//				});
+//			});		
+//		}
+//	});
+	
+</script>
+</body>
+</html>

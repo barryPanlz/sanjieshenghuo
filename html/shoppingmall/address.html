@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0">
+		<title> 商城-收货地址 </title>
+		<link rel="stylesheet" href="../../css/common/reset.css">
+		<link rel="stylesheet" href="../../css/common/common.css">
+		<link rel="stylesheet" type="text/css" href="../../css/private/shippingaddress.css"/> 
+		<script src="../../js/lib/rem.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+		<header>
+			<h1>收货地址</h1>
+			<a class="u_back" href="#">返回</a>
+		</header>
+		
+	    <div class="address_details">
+	    	<p class="address_details_p1"> <img src="../../images/icon_checkbox.png"/> <span> 杨树林 </span> <em> 18130075740 </em> </p>
+	    	<p class="address_details_p2"> 江西省九江市庐山区十里大道1 </p>
+	    </div>
+	    <div class="address_amend"> 
+	    	<li class="default_address"> 默认地址 </li>
+	    	<a href=" " class="address_delete">  <img src="../../images/icon31.png"/> <span> 删除 </span> </a>
+	    	<a href="addaddress.html"> <img src="../../images/edit.png"/> <span> 修改 </span> </a>
+	    </div>
+	    
+	    
+		
+	    <div class="address_details">
+	    	<p class="address_details_p1"> <img src="../../images/icon_checkbox.png"/> <span> 黄有光</span> <em> 13856725172 </em> </p>
+	    	<p class="address_details_p2"> 江西省九江市庐山区十里大道省九江市庐山区十里大道省九江市庐山区十里大道  </p>
+	    </div>
+	    <div class="address_amend">  
+	    	<a href="" class="address_delete">  <img src="../../images/icon31.png"/> <span> 删除 </span> </a>
+	    	<a href="addaddress.html"> <img src="../../images/edit.png"/> <span> 修改 </span> </a>
+	    </div>
+	    
+	    <div class="address_details">
+	    	<p class="address_details_p1"> <img src="../../images/icon_checkbox_red.png"/> <span> 杨树林 </span> <em> 18130075740 </em> </p>
+	    	<p class="address_details_p2"> 江西省九江市庐山区十里大道1 </p>
+	    </div>
+	    <div class="address_amend">  
+	    	<a href=" " class="address_delete">  <img src="../../images/icon31.png"/> <span> 删除 </span> </a>
+	    	<a href="addaddress.html"> <img src="../../images/edit.png"/> <span> 修改 </span> </a>
+	    </div>
+	    
+	    <div class="u_link_button address_btn"><a href="addaddress.html"> <img src="../../images/add_white.png"/> 添加地址</a></div>
+	    
+	         
+	    <!--删除框-->
+	    <div class="remove_background" style="display: none;">
+	    	<div class="remove_box">
+		    	<div class="remove_box_content">
+		    		确定要删除地址吗？
+		    	</div>
+		    	<ul class="remove_box_ul">
+		    		<li class="call_off"> 取消 </li>
+		    		<li class="remove_box_ul_li"> 确认 </li>
+		    	</ul>
+		    </div>
+	    </div>
+	    
+	    
+	      <!--删除成功-->
+	      <div class="delete_suc_kuang">
+	      	 删除成功
+	      </div>
+	    
+	    
+		   
+	    
+	    
+	    
+	    
+	<script type="text/javascript" src="../../js/lib/zepto.min.js"></script>
+	<script type="text/javascript" src="../../js/lib/fastclick.js"></script>
+	<script>
+	    //	fastclick解决移动端点击延迟的问题
+		if ('addEventListener' in document) {
+		    document.addEventListener('DOMContentLoaded', function() {
+		        FastClick.attach(document.body);
+		    }, false);
+		}
+		
+		
+     
+		//图片改变
+		$('.address_details').click(function(){ 
+    		 if( $(this).find('img').attr('src') == '../../images/icon_checkbox.png' ){
+    			$(this).find('img').attr('src','../../images/icon_checkbox_red.png'); 
+    			$(this).siblings().find('.address_details_p1').find('img').attr('src','../../images/icon_checkbox.png'); 
+    		 }else{
+    		 	$(this).find('img').attr('src','../../images/icon_checkbox.png'); 
+    		 }
+	   }); 
+	   
+        //点击删除按钮
+        $('.address_delete').click(function(){
+        	$('.remove_background').css('display','block');
+           //点击取消按钮
+        	$('.call_off').click(function(){
+        		$('.remove_background').css('display','none');
+        	});
+        	return false;
+        });
+        
+        
+        //删除框两秒小时 
+		window.setTimeout(function(){
+	        $('.delete_suc_kuang').css('display','none');
+		}, 2000);
+ 
+        
+        
+        
+ 
+ 
+		
+	</script>
+	  
+		
+	</body>
+</html> 

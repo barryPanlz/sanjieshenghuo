@@ -1,0 +1,54 @@
+.hx-box{
+    width: 100%;
+    overflow: hidden;
+}
+.hx-list{
+	width: 100%;
+	overflow: hidden;
+}
+.hx-title{
+    /*height: 34px;*/
+    line-height: 34px;
+    border-bottom: 1px solid #d5d5d5;
+    margin-top: 20px;
+}
+.hx-title span{
+    float: left;
+    /*height: 34px;*/
+    line-height: 34px;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: center;
+    background: #f7f7f7;
+}
+.hx-title span:nth-child(1){
+    width: 10%;
+}
+.hx-title span:nth-child(2){
+    width: 30%;
+}
+.hx-title span:nth-child(3){
+    border-right: 0;
+    width: 60%;
+}
+.hx-list li{
+    width: 33%;
+    float: left;
+    /*height: 34px;*/
+    line-height: 20px;
+    font-size: 12px;
+    text-align: center;
+    color: #666;
+    background: #f7f7f7;
+    margin-top: 10px;
+    word-break : break-all;
+}
+.hx-list li:nth-child(1){
+    width: 11%;
+}
+.hx-list li:nth-child(2){
+    width: 30%;
+}
+.hx-list li:last-child{
+    width: 58%;
+}

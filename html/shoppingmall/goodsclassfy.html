@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0">
+	<title>合链商城-商品分类</title>
+	<link rel="stylesheet" href="../../css/common/reset.css">
+	<link rel="stylesheet" href="../../css/common/common.css">
+	<link rel="stylesheet" href="../../css/private/classfy.css">
+	<script type="text/javascript" src="../../js/lib/rem.js"></script>
+</head>
+<body>
+<div class="screen">
+	<header>
+		<a class="u_back" onclick="history.go(-1)" href="#">返回</a>
+		<div class="u_search_box">
+			<input type="text" placeholder="搜索关键字">
+			<span class="u_search">搜索</span>
+		</div>
+	</header>
+	<div class="main">
+		<div class="classfy_top">全部分类</div>
+		<section>
+			<div class="classfy_list">
+				<ul class="classfy_left">
+					<li class="now_choose"><a href="#">生活电器</a></li>
+					<li><a href="#">数码手机</a></li>
+					<li><a href="#">家具家居</a></li>
+					<li><a href="#">化妆护理</a></li>
+					<li><a href="#">服饰箱包</a></li>
+					<li><a href="#">运动健身</a></li>
+					<li><a href="#">汽车用品</a></li>
+					<li><a href="#">食品饮料</a></li>
+				</ul>
+				<div class="classfy_right">
+					<div class="advert_box">
+						<img src="../../images/img18.png" alt="">
+						<img src="../../images/img19.png" alt="">
+						<img src="../../images/img20.png" alt="">
+					</div>
+					<div class="classfy_in">
+						<ul>
+							<li><a href="goodslist.html">手机</a></li>
+							<li><a href="#">电脑</a></li>
+							<li><a href="#">单反</a></li>
+							<li><a href="#">电视机</a></li>
+							<li><a href="#">耳机</a></li>
+							<li><a href="#">平板</a></li>
+							<li><a href="#">微控温</a></li> 
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<footer>
+		<ul>
+			<li class="nowpage">
+				<a href="mallIndex.html">
+					<div><img src="../../images/shouye-xuanzhong.png" alt=""></div>
+					<p>合链商城</p>
+				</a>				
+			</li>
+			<li>
+				<a href="#">
+					<div><img src="../../images/weilaishenghuo-ct.png" alt=""></div>
+					<p>三界本地</p>
+				</a>				
+			</li>
+			<li>
+				<a href="../center/customerservice.html">
+					<div><img src="../../images/kefu-ct.png" alt=""></div>
+					<p>客服</p>
+				</a>				
+			</li>
+			<li>
+				<a href="shopcar.html">
+					<div><img src="../../images/gouwuche-ct.png" alt=""></div>
+					<p>购物车</p>
+				</a>				
+			</li>
+			<li>
+				<a href="../center/center.html">
+					<div><img src="../../images/gerenzhongxin-ct.png" alt=""></div>
+					<p>我的</p>
+				</a>				
+			</li>
+		</ul>
+	</footer>
+</div>
+<script type="text/javascript" src="../../js/lib/zepto.min.js"></script>
+<script type="text/javascript" src="../../js/lib/fastclick.js"></script>
+<script>
+	/*fastclick解决移动端点击延迟的问题*/
+	if ('addEventListener' in document) {
+	    document.addEventListener('DOMContentLoaded', function() {
+	        FastClick.attach(document.body);
+	    }, false);
+	}
+	$('.classfy_left li').click(function(event) {
+		$(this).addClass('now_choose').siblings('li').removeClass('now_choose');
+	});
+</script>
+</body>
+</html>

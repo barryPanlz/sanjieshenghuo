@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0">
+	<title>提交订单</title>
+	<link rel="stylesheet" href="../../css/common/reset.css">
+	<link rel="stylesheet" href="../../css/common/common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/private/suborder.css"/>
+	<script src="../../js/lib/rem.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div class="screen">
+		<header>
+			<h1>提交订单</h1>
+			<a class="u_back" href="javascript:history.go(-1);">返回</a>
+		</header>
+
+	<div class="main">
+		<div class="sub_top">
+			<ul class="sub_top_left">
+				<li>
+					<span>
+						杨淑丽
+					</span>
+					<em>13733349690</em>
+				</li>
+				<li>江西省九江市庐山区十里大道18号</li>
+			</ul>
+			<div class="sub_top_right">
+				<a href="###">
+					<img src="../../images/back.png"/>
+				</a>
+				
+			</div>
+		</div>
+		<div class="sub_center">
+			<ul>
+				<li>
+					<a href="shopDetails.html">
+						<div class="sub_li_left">
+							<img src="../../images/img25.png"/>
+						</div>
+						<div class="sub_li_right">
+							<p>凌风牌 — 山地自行车四件套（送铃铛、挡雨板、雨衣、车灯）</p>
+							<p><span>颜色：</span><span>白色</span>&nbsp;&nbsp;<span>尺码：</span><span>38</span>&nbsp;&nbsp;<span>容量：</span><span>25</span><span>ml</span></p>
+							<p>
+								<b><i class="shopPrice">2048</i><i>合链币</i></b>
+								<em class="jiajian">
+									<span class="oper jia_up" title="减一">-</span>
+								 	<input type="number" name="" class="onub" value="1" />
+								 	<span class=".oper jian_next" title="加一">+</span>
+								</em>
+							</p>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="shopDetails.html">
+						<div class="sub_li_left">
+							<img src="../../images/img25.png"/>
+						</div>
+						<div class="sub_li_right">
+							<p>凌风牌 — 山地自行车四件套（送铃铛、挡雨板、雨衣、车灯）</p>
+							<p><span>颜色：</span><span>白色</span>&nbsp;&nbsp;<span>尺码：</span><span>38</span>&nbsp;&nbsp;<span>容量：</span><span>25</span><span>ml</span></p>
+							<p>
+								<b><i class="shopPrice">2000</i><i>合链币</i></b>
+								<em class="jiajian">
+									<span class="oper jia_up" title="减一">-</span>
+								 	<input type="number" name="" class="onub" value="1" />
+								 	<span class=".oper jian_next" title="加一">+</span>
+								</em>
+							</p>
+						</div>
+					</a>
+				</li>
+				
+				<div class="peisong_wrap">
+					<div class="peisong">
+						<div><span>配送方式：</span><span>随机选择快递方式</span></div>
+						<div><span>运费 :</span><span>0.00</span></div>
+						<div class="heji">
+							<span>共</span><i id="shopNub">2</i><span>商品，合计：</span><i>￥</i><i class="shopAllMonye">4090.00</i>
+						</div>
+					</div>
+					
+				</div>
+			</ul>
+			
+		</div>
+	</div>
+	<footer>
+		<div class="dingdananniu">
+			<div class="dingdan_heji">
+				<span>合计：</span>
+				<i class="shopAllMonye">4096.00</i>
+				<i>合链币</i>
+			</div>
+			<a href="###" class="dingdan_queding">
+				提交订单
+			</a>
+		</div>
+	</footer>
+</div>
+<script type="text/javascript" src="../../js/lib/zepto.min.js"></script>
+<script type="text/javascript" src="../../js/lib/fastclick.js"></script>
+<script>
+$(document).ready(function() {
+	/*fastclick解决移动端点击延迟的问题*/
+	if ('addEventListener' in document) {
+	    document.addEventListener('DOMContentLoaded', function() {
+	        FastClick.attach(document.body);
+	    }, false);
+	}
+	
+	
+	//加减
+	var oNub=1;
+	$(".jia_up").click(function(){	
+		$(this).parent(".jiajian").find(".oper").css("color","#282828");
+		oNub=$(this).parent(".jiajian").find(".onub").val();	
+		var shopAllMoney=$(".shopAllMonye").eq(0).text();
+		oNub--;	
+		if(oNub<1){
+			oNub=1;
+			$(this).parent(".jiajian").find(".jia_up").css("color","#999999");
+			var shopAllmonye=parseFloat(0);
+			var hejiNub=$(".shopAllMonye").eq(0).text();
+			var allNub=parseFloat(hejiNub)+parseInt(shopAllmonye);
+			var allNub=parseFloat(hejiNub)+parseInt(shopAllmonye);
+			$(".shopAllMonye").text(allNub);
+		}else{
+			var shopmony=$(this).parents("li").find(".shopPrice").text();
+			var shopAllmonye=parseFloat(-shopmony);
+			var hejiNub=$(".shopAllMonye").eq(0).text();
+			var allNub=parseFloat(hejiNub)+parseInt(shopAllmonye);
+		}
+			
+			$(this).parent(".jiajian").find(".onub").val(oNub);
+			$(".shopAllMonye").text(allNub);
+			return false;
+	});
+	$(".jian_next").click(function(){
+		$(this).parent(".jiajian").find(".oper").css("color","#282828");
+		oNub=$(this).parent(".jiajian").find(".onub").val();	
+		oNub++;	
+		$(this).parent(".jiajian").find(".onub").val(oNub);
+		
+		var shopmony=$(this).parents("li").find(".shopPrice").text();
+		var shopAllmonye=parseFloat(shopmony);
+		var hejiNub=$(".shopAllMonye").eq(0).text();
+		var allNub=parseFloat(hejiNub)+parseInt(shopAllmonye);
+		$(this).parent(".jiajian").find(".onub").val(oNub);
+		$(".shopAllMonye").text(allNub);
+		return false;
+	});
+$(document).ready(function(){
+	var subCenter=$(".sub_center").find("li");
+	var shopNub=0;
+	var shopAllMoney=0;
+  $.each(subCenter, function(m) { 
+  	shopNub++;
+  	console.log($(this).find(".shopPrice").text()) ;
+  	var shopMoney=parseFloat($(this).find(".shopPrice").text()*$(this).find(".onub").val());
+  	console.log(shopMoney);
+  	shopAllMoney+=shopMoney;
+  });
+  $("#shopNub").text(shopNub);
+  $(".shopAllMonye").text(shopAllMoney);
+});
+ 
+ 
+
+
+
+	
+});
+
+
+</script>
+</body>
+</html>

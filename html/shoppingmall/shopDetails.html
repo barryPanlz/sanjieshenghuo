@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>商品详情</title>
+		<link rel="stylesheet" type="text/css" href="../../css/common/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/common/common.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/private/shopDetails.css" />
+		<style type="text/css">
+			.rule_box h3{
+				font-size:0.28rem ;
+			}
+			.rule_box select {
+		    display: inline-block;
+		    height: .6rem;
+		    border: 1px solid #d4d4d4;
+		    box-sizing: border-box;
+		    width: 25%;
+		    margin-right: .16rem;
+		    margin-bottom: .16rem;
+		    float: left;
+		    font-size: .2rem;
+		    color: #999;
+		    padding-left: .08rem;
+		    -webkit-appearance: none;
+		    appearance: none;
+		    background: url(../../images/down_gray.png) no-repeat 95% center;
+		    -webkit-background-size: 8px;
+		    background-size: 8px;
+		}
+		</style>
+		<script src="../../js/lib/rem.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<header>
+			<a class="u_back" href="javascript:history.go(-1);">返回</a>
+			<h1>商品详情</h1>
+			<a class="u_info u_search" href="../center/customerservice.html"></a>
+		</header>
+		<div class="main main_art">
+			<div class="main_visual">
+				<div class="flicking_con">
+					<a href="#">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+					<a href="#">6</a>
+					<a href="#">7</a>
+					<a href="#">8</a>
+					<a href="#">9</a>
+					<span>/9</span>
+				</div>
+				<div class="main_image">
+					<ul>
+						<li><img src="../../images/img24.png" alt="" /></li>
+						<li><img src="../../images/img24.png" alt="" /></li>
+						<li><img src="../../images/img24.png" alt="" /></li>
+						<li><img src="../../images/img24.png" alt="" /></li>
+						<li><img src="../../images/img24.png" alt="" /></li>
+						<li><img src="../../images/img24.png" alt="" /></li>
+						<li><img src="../../images/img24.png" alt="" /></li>
+						<li><img src="../../images/img24.png" alt="" /></li>
+						<li><img src="../../images/img24.png" alt="" /></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="d_info">
+				<div class="d_top_box">
+					<div class="d_top">
+						<p>Uniscom/紫光电子 mz89 WIFI 32GB WIN10 系统就是好呀包邮深特区系统就是包邮..</p>
+					</div>
+					<div class="d_mid">
+						<div class="d_mid_top">
+							<span class="s t">5888.00</span>
+							<span class="s b">合链币</span>
+							<span class="vip">钻石会员</span>
+						</div>
+						<div class="d_mid_mid">
+							<p class="one">已兑换 <span>315</span></p>
+							<p class="two">运费 <span>0.00</span></p>
+							<p class="three">杭州</p>
+						</div>
+					</div>
+					<div class="d_btm">
+						<div class="d_btm_top">
+							<p class="fl">商品编码:<span class="order_number">2016092541230</span></p>
+							<p class="fr">供应商:<span>苹果(中国)、太平洋数码</span></p>
+						</div>
+						<div class="d_btm_mid">
+							<p>促销：<span>包邮</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="d_tit">
+				<h3>商品详情</h3>
+				<img src="../../images/shangpinxiangqing.png" alt="" />
+			</div>
+		</div>
+		<footer>
+			<div class="fl">
+				<a href="mallIndex.html">
+					<img src="../../images/shouye-ct.png" alt="" />
+				</a>
+				<a href="###" class="add_cart1">
+					<img src="../../images/gouwuche-ct.png" alt="" />
+				</a>
+				<input class="add_cart add_cart1" type="button" value="加入购物车" />
+				<input class="buy_now" type="button" value="立即购买" />
+			</div>
+		</footer>
+
+		<div class="mark">
+			<div class="opc">
+			</div>
+		</div>
+		<div class="c_box">
+			<!--<div class="color_box">
+				<h3>颜色</h3>
+				<ul class="color_kind">
+					<li>蓝色</li>
+					<li class="c_3">红色</li>
+					<li>黄色</li>
+				</ul>
+			</div>-->
+			<div class="rule_box">
+				<h3>请选择物流：</h3>
+				<ul class="rule_kind">
+					<select name="" id="wuliu">
+	                    <option value="国内物流">国内物流</option>
+	                    <option value="境外物流">境外物流</option>
+	                </select>
+				</ul>
+			</div>
+			<div class="num_box">
+				<p class="fl">数量</p>
+				<p class="fr">
+					<span class="d_subtract">-</span>
+					<input type="text" class="d_numVal" id="onub" value="1" />
+					<span class="d_add">+</span>
+				</p>
+			</div>
+			<div class='c_chu'>
+				<p>库存<span>1180</span>件</p>
+			</div>
+			<div class="sure" id="sureYes">
+				确定
+			</div>
+		</div>
+
+		<!--购物成后-->
+		<div class="succ">
+			<div class="succ_box">
+				<img src="../../images/chenggong.png" alt="" />
+				<p>加入购物车成功</p>
+			</div>
+		</div>
+
+		<script>
+	
+		</script>
+	</body>
+
+</html>
+<script src="../../js/lib/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/lib/jquery.touchSlider.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/lib/jquery.event.drag-1.5.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/common/common.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		
+		var _h = $(".main_image ul li").length;
+		 if(_h>1){
+		 	$(".main_image").touchSlider({
+				flexible: true,
+				speed: 300,
+				btn_prev: $("#btn_prev"),
+				btn_next: $("#btn_next"),
+				paging: $(".flicking_con a"),
+				counter: function(e) {
+					$(".flicking_con a").removeClass("on").eq(e.current - 1).addClass("on");
+				}
+			});
+		 }
+		
+
+		
+	
+		
+        //遮罩选择区
+    	$('.buy_now').click(function() {
+			$('.mark,.c_box').show();
+		});
+    	$('.add_cart1').click(function() {
+			alert("此功能暂缓开发");
+		})
+		$('.sure').click(function() {
+			$('.mark,.c_box').hide();
+//			$('.succ').show();
+		})
+        
+        //选项卡
+		$('.color_kind li').click(function(){
+			$(this).addClass('c_3').siblings().removeClass('c_3')
+		})
+		$('.rule_kind li').click(function(){
+			$(this).addClass('c_3').siblings().removeClass('c_3')
+		})
+		
+	});
+//==========================================	
+</script>
+<script type="text/javascript">
+	
+	
+	
+	//用户信息
+	function login(){
+		$.ajax({
+		    type: "post",
+		    data: {
+		        CSESSIONID: scessinoId,
+		    },
+		    url: url + "/api/user/toMemberCenter",
+		    async: false,
+		    success: function (res) {
+//		    	 console.log(res);
+//		        //未登录状态判断
+		        var res=res;
+//		//      console.log(typeof(res));
+		        if(typeof(res)=="string"){
+		        	res=$.parseJSON(res);
+		        }
+		        if (res.errorCode == -2) {
+		           alert("登录超时，请重新登陆");
+		           window.location.href="../center/login.html";
+		           return false;
+		        };
+		        if (res.errorCode == 0) {
+		        	window.userid = res.data.userInfo.user_id;
+		            $(".top_right1").css("display", "none");
+		            $(".top_right2").css("display", "block");
+		            var userInfo = res.data.userInfo;
+		            $("#userName").text(userInfo.account);
+		        }
+		    }
+
+		});
+	}
+
+
+    $(function () {
+
+//        var url = "http://192.168.100.17:3334/wallet-service"
+        console.log(scessinoId)
+        $('#sureYes').click(function () {
+        	login();
+            var shippingName = $('#wuliu option:selected').text();
+            var goodsNumber=$(".d_numVal").val();
+            console.log(shippingName,scessinoId)
+            $.ajax({
+                type: "post",
+                url: url+"/api/rest/shopOrder/insertShopOrder",
+                async:true,
+                dataType: "JSON",
+                contentType: "application/json",
+                data:JSON.stringify({
+                    "supplierName": "test supplier",
+                    "goodsNumber": goodsNumber,
+                    "userCode": "999",
+                    "userId": window.userid,
+                    "addressId": "774",
+                    "postscript": "ls测试",
+                    "shippingName": shippingName,
+                    "payName": "weicat pay",
+                    "goodsId": "1120",
+                    "skuValue": "lstextlslsls",
+                    "payPrice": "100",
+                    "csessionid": scessinoId,
+                    "isPromote": "0",
+                    "skuInfo": ""
+                }),
+                success: function (res) {
+                    console.log(res);
+                    if (res.errorCode == -2) {
+			            alert(res.message);
+			            window.location.href = "../center/login.html"
+			        }
+                    else if (res.errorCode == 0) {
+                        alert(res.message);
+                        window.location.href = "shoporder.html"
+                    } else {
+                        alert(res.message);
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+//                  alert(err);
+                }
+            });
+        })
+
+
+        var oNub = 1;
+        $(".d_subtract").click(function () {
+            oNub = $("#onub").val();
+           	$(".d_add").css({"color": "#bbbbbb", "background": "#DDDDDD"})
+            $(".d_subtract").css({"color": "#272727", "background": "#ffffff"})
+            oNub--;
+            if (oNub < 1) {
+                oNub = 1;
+            }
+            $("#onub").val(oNub)
+            getDate();
+            return false;
+        });
+        $(".d_add").click(function () {
+            $(".d_subtract").css({"color": "#bbbbbb", "background": "#DDDDDD"})
+            $(".d_add").css({"color": "#272727", "background": "#ffffff"})
+            oNub = $("#onub").val();
+            if (oNub < 50) {
+                oNub++;
+                $("#onub").val(oNub);
+
+            }
+            getDate();
+            return false;
+        });
+
+
+        getDate();
+        function getDate() {
+            $.ajax({
+                url: url+'/api/rest/goods/showGoodsDetail',
+                type: 'post',
+                data: {
+                    "goodsId": 1130,
+                    "catId": 2,
+                    "isPromote": 0
+                },
+                async: true,
+                dataType: 'json',
+                success: function (res) {
+                    console.log(res)
+                    if (res.errorCode == 0) {
+                        var data = res.data[0].goodsListDetail[0]
+                        console.log(data)
+                        console.log($('#onub').val());
+                        $('.get_money').html(data.goodsPrice)
+                        $('.get_num').html(oNub)
+                        $('.get_total').html(data.goodsPrice * oNub)
+
+                    } else {
+                        alert(res.message);
+                        console.log(res.message);
+                    }
+                },
+                error: function (err) {
+//                        alert(err);
+                    console.log(err)
+                }
+
+            });
+        }
+
+    });
+
+</script>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" href="../../css/common/reset.css">
+	<link rel="stylesheet" href="../../css/common/common.css">
+	<script src="../../js/lib/rem.js" type="text/javascript" charset="utf-8"></script>
+	<style>
+		header,.main,footer{position: relative;}
+		.dicrib{color: #000; margin-top: 30px; margin-bottom: 10px; padding: 0 10px}
+		html, body, .screen {overflow: auto;}
+	</style>
+</head>
+<body style="font-size: 0.18rem;">
+<div class="all">
+	<!--这里是统一的颜色-->
+	<p class='dicrib'><b>统一规范</b><br></p>
+	<p><b>红色色值：</b>#f3001e稍深一点的红，#f01c1b稍浅一点的红</p>
+	<p><b>蓝色色值：</b>#12aca0</p>
+	<p><b>所有盒子内容距离左右两边内边距为：</b>15px</p>
+	<p><b>页面图标：</b>先从images文件夹里找，找不到了再自己加，加的时候注意不要重复了</p>
+	<p><b>分割线颜色：</b>#f4f4f4</p>
+	<p><b>边框颜色：</b>#d4d4d4</p>
+	
+	<!--这里是头部样式一-->
+	<p class='dicrib'><b>头部样式一（带分类和搜索图标）</b><br>中间标题超出隐藏</p>
+	<header>
+		<a class="u_classfy" href="#">列表</a>
+		<h1>这里是页面标题这里是页面标题</h1>
+		<a class="u_search" href="#">搜索</a>
+	</header>
+
+	<!--这里是头部样式二-->
+	<p class='dicrib'><b>头部样式二（购物车头部，带编辑按钮）</b><br>右边按钮点击编辑时，加class名u-done,里面文字变为“完成”，点“完成”即u-done时，删除class名u-done,文字变回到“编辑”</p>
+	<header>
+		<h1>购物车</h1>
+		<a class="u_edit" href="#">编辑</a>
+	</header>
+
+	<!--这里是头部样式三-->
+	<p class='dicrib'><b>头部样式三（带返回图标的头部）</b><br></p>
+	<header>
+		<h1>注册</h1>
+		<a class="u_back" href="#">返回</a>
+	</header>
+
+	<!--这里是头部样式四-->
+	<p class='dicrib'><b>头部样式四（带搜索框的头部）</b><br></p>
+	<header>
+		<a class="u_back" href="#">返回</a>
+		<div class="u_search_box">
+			<input type="text" placeholder="搜索关键字">
+			<span class="u_search">搜索</span>
+		</div>
+	</header>
+
+	<p class='dicrib'><b>未来生活头部样式（带分类和搜索图标）</b><br>只需在header标签上加class名“u_live_header”即可变色</p>
+	<header class="u_live_header">
+		<a class="u_classfy" href="#">列表</a>
+		<h1>这里是页面标题这里是页面标题</h1>
+		<a class="u_search" href="#">搜索</a>
+	</header>
+
+	<!--这里是底部导航栏-->
+	<p class='dicrib'><b>这里是底部导航栏：</b><br>这里是底部导航栏，当前页面给li加class名“nowpage”,img路径后有_red表示为红色图标，不加的为未选中的图标</p>
+	<footer>
+		<ul>
+			<li class="nowpage">
+				<a href="#">
+					<div><img src="../../images/shouye-xuanzhong.png" alt=""></div>
+					<p>合链商城</p>
+				</a>				
+			</li>
+			<li>
+				<a href="#">
+					<div><img src="../../images/weilaishenghuo-ct.png" alt=""></div>
+					<p>三界本地</p>
+				</a>				
+			</li>
+			<li>
+				<a href="#">
+					<div><img src="../../images/kefu-ct.png" alt=""></div>
+					<p>客服</p>
+				</a>				
+			</li>
+			<li>
+				<a href="#">
+					<div><img src="../../images/gouwuche-ct.png" alt=""></div>
+					<p>购物车</p>
+				</a>				
+			</li>
+			<li>
+				<a href="#">
+					<div><img src="../../images/gerenzhongxin-ct.png" alt=""></div>
+					<p>我的</p>
+				</a>				
+			</li>
+		</ul>
+	</footer>
+
+	<!--这里是复选框元件-->
+	<p class='dicrib'><b>复选框元件</b><br></p>
+	<p>1、带文字的复选框</p>
+	<label for="u_checkbox"><input id="u_checkbox" type="checkbox">复选框</label>
+	<p>2、不带文字的复选框</p>
+	<input type="checkbox">
+
+	<!--这里是单选框元件-->
+	<p class='dicrib'><b>单选框元件</b><br></p>
+	<p>1、带文字的单选框</p>
+	<label for="u_radio1"><input id="u_radio1" type="radio" name="test">单选框1</label>
+	<label for="u_radio2"><input id="u_radio2" type="radio" name="test">单选框2</label>
+	<p>2、不带文字的单选框</p>
+	<input type="radio" name="test1">
+	<input type="radio" name="test1">
+
+	<!--这里是按钮元件-->
+	<p class='dicrib'><b>按钮元件</b><br></p>
+	<p>1、走链接的按钮</p>
+	<div class="u_link_button"><a href="#">确定</a></div>
+	<p>2、走提交的按钮</p>
+	<div class="u_button"><input type="submit" value="提交"></div>
+
+
+
+	<!--可能会复用的模块-->
+
+	<p class='dicrib'><b>充值头部页面</b><br>有可能会复用的页面，用到的页面不多，谁用到谁自己粘贴到自己的css中，最终这块在common中会被删除</p>
+	<div class="u_list">
+		<ul>
+			<li>
+				<div><img src="../../images/icon13.png" alt=""></div>
+				<h4>账户余额</h4>
+				<span>3200合链币</span>
+			</li>
+			<li>
+				<div><img src="../../images/icon16.png" alt=""></div>
+				<h4>我的身份</h4>
+				<span class="u_degree">普通会员</span>
+			</li>
+			<li>
+				<div><img src="../../images/icon19.png" alt=""></div>
+				<h4>兑换汇率</h4>
+				<span>50:100(50元可充值100合链币)</span>
+			</li>
+		</ul>
+	</div>
+	<!--模态框-->
+	<b>在自己的css定义位置</b>
+	<p class='dicrib'><b>成功模态框</b><br>使用时需自己定义在页面的位置直接引用即可</p>
+	<div class="motai_succe">
+		发货成功
+	</div>
+	<p class='dicrib'><b>失败模态框</b><br>使用时需自己定义在页面的位置直接引用即可</p>
+	<div class="motai_lose">
+		发货失败
+	</div>
+
+	<!--错误提示弹出2s后消失，并且内容变化的效果-->
+	<p class='dicrib'><b>错误提示效果</b><br>
+	<p class='dicrib'>如果表单填写错误，则显示错误提示,显示2s后消失，显示时改变错误提示的内容即可，“error_tip”即为错误提示的弹出框名，复制时去unit_demo复制带缩进的js</p>
+	<p>
+		/*点击注册按钮*/
+		$('.regist_button').click(function(event) {
+			/*如果表单填写错误，执行以下js,则显示错误提示,显示2s后消失，显示时改变错误提示的内容即可*/
+			if(!$('.error_tip').is(":animated")){
+				$('.error_tip').show(100, function() {
+					$('.error_tip').html('手机号码输入错误');//这里输入要提示的内容
+					$('.error_tip').animate({
+						opacity: 1,
+						},1000, function() {
+						window.setTimeout(function(){
+							$('.error_tip').animate({
+								opacity: 0,
+								},
+								1000, function() {
+								$('.error_tip').hide();
+							});
+						}, 2000)
+					});
+				});		
+			}
+			
+		});
+	</p>
+</div>
+<script>
+	/*点击注册按钮*/
+	$('.regist_button').click(function(event) {
+		/*如果表单填写错误，执行以下js,则显示错误提示,显示2s后消失，显示时改变错误提示的内容即可*/
+		if(!$('.error_tip').is(":animated")){
+			$('.error_tip').show(100, function() {
+				$('.error_tip').html('手机号码输入错误');//这里输入要提示的内容
+				$('.error_tip').animate({
+					opacity: 1,
+					},1000, function() {
+					window.setTimeout(function(){
+						$('.error_tip').animate({
+							opacity: 0,
+							},
+							1000, function() {
+							$('.error_tip').hide();
+						});
+					}, 2000)
+				});
+			});		
+		}
+		
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+
+.u_list ul li .end{
+	padding: 0;
+	margin-right:0;	
+}
+
+/*充值投标区域*/
+.input_box,.pay_way{
+	padding:.5rem .30rem 0 .30rem;
+	overflow: hidden;
+	height:2.16rem;
+	background: #fff;	
+}
+.input_box div{
+	font-size:.24rem;
+    color:#282828;
+    height:.72rem;
+    border:1px solid #ccc;
+    margin-bottom: .24rem;
+    line-height: .72rem;
+    border-radius:3px;
+}
+.input_box input{
+	margin-left:.6rem;
+	font-size:.24rem;
+	color:#575757;
+	border: none;
+}
+
+.pay_way{
+	height:2.66rem;
+	margin-top:.14rem;
+	padding:.3rem .30rem 0 .30rem;
+}
+.pay_way h2{
+	font-size:.24rem;
+	color:#282828;
+	font-weight:700;
+	margin-bottom: .24rem;
+}
+.pay_way ul li{
+	font-size:0;
+}
+
+.pay_radio li div{
+	position: relative;
+	margin-left:.1rem;
+	display: inline-block;	
+	height:.58rem;
+	padding:0 .2rem;
+	line-height: .58rem;
+	border: 2px solid #Fff;
+}
+.pay_radio li div.choose{
+	border: 2px solid #F3001D;
+}
+.pay_radio li div.choose:before{
+	content: '';
+	position: absolute;
+	bottom: 0;
+	right:0;
+	background: url(../../images/duigou.png) no-repeat center;
+	background-size: 100%;
+	width: .32rem;
+	height: .31rem;
+}
+
+.pay_way ul li input{
+	vertical-align: middle;
+	cursor: pointer;
+}
+.pay_way ul li input[type=radio]{
+	width:.28rem;
+	height:.28rem;
+}
+.pay_way ul li input[type=radio]:checked:after{
+	width:.28rem;
+	height:.28rem;
+}
+.pay_way ul li span{
+	
+	margin-left:.1rem;
+	color:#999;
+	font-size:.14rem;
+	vertical-align:middle;
+}
+.zifubao{
+	width:1rem;
+	height:.36rem;
+}
+.weixin{
+	height:.28rem;
+	width:1rem;
+}
+.yinlian{
+	height:.27rem;
+	width:1.13rem;
+}
+.sure_pay{
+	padding:0 .30rem 0 .30rem;
+	margin:.98rem 0 1rem 0;
+}
+.sure_pay input{
+	width:100%;
+	height:.74rem;
+	background: #F3001D;
+	border-radius:5px;
+	font-size:.24rem;
+	color:#fff;
+}
+
+
+/*公用弹出框部分*/
+.error_box{
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-left:-1.73rem;
+	margin-right:-.43rem;
+	width:3.46rem;
+	height:.86rem;
+	background: #000;
+	opacity: .6;
+	border-radius: 5px;
+	text-align: center;
+	line-height: .86rem;
+	z-index: 3333;
+	border:0;
+	margin-bottom:0;
+	display: none;
+}
+.error_box p{
+	height:100%;
+	color:#fff;
+	font-size:.24rem;
+}
+/*弹出结束*/
+
+
+/*普通会员结束*/
+
+/*普通会员成功*/
+.succ_box{
+	margin:.14rem 0;
+	height:2.1rem;
+	background: #fff;
+	text-align: center;
+}
+.succ_box img{
+	width:.87rem;
+	height:.87rem;
+}
+.succ_box p{
+	font-size:.28rem;
+	color:#F01C1C;
+}
+
+.succ_txt{
+	padding-top:.5rem;
+	height:3.06rem;
+	background: #fff;
+	
+}
+.succ_txt li{
+	margin-left:.3rem;
+	margin-bottom:.24rem;
+	font-size:.24rem;
+	color:#282828;
+}
+.succ_txt li span{
+	color:#575757;
+	margin-left:.2rem;
+}
+.succ_txt li i{
+	font-style: normal;
+}
+.sure_pay a{
+	display: block;
+	font-size:.24rem;
+	height:.74rem;
+	background: #F01C1C;
+	color:#fff;	
+	border-radius:5px;
+	text-align: center;
+	line-height: .74rem;
+}
+/*普通会员成功结束*/
+
+/*普通会员支付失败*/
+.fail_box{
+	height:1.8rem;
+}
+/*普通会员支付结束*/
+
+

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0">
+	<title>提交订单-添加地址</title>
+	<link rel="stylesheet" href="../../css/common/reset.css">
+	<link rel="stylesheet" href="../../css/common/common.css">
+	<link rel="stylesheet" href="../../css/private/form.css">
+	<script src="../../js/lib/rem.js" type="text/javascript" charset="utf-8"></script> 
+</head>
+<body>
+<div class="screen">
+	<header>
+		<h1>添加收货地址</h1>
+		<a class="u_back" href="#" onclick="history.go(-1)">返回</a>
+	</header>
+	<div class="main no_footer_main">
+		<form action="">
+			<ul class="form_box">
+				<li>
+					<div>收货人:</div>
+					<input type="text">
+				</li>
+				<li>
+					<div>手机号码:</div>
+					<input type="text">
+				</li>
+				<li class="address_box">
+					<div>收货地址:</div>
+					<div>
+						<select name="" id="">
+							<option value="">选择省份</option>
+							<option value="">北京</option>
+						</select>
+						<select name="" id="">
+							<option value="">选择城市</option>
+						</select>
+						<select name="" id="">
+							<option value="">选择县城</option>
+						</select>
+						<select name="" id="">
+							<option value="">选择乡镇</option>
+						</select>
+					</div>
+					<div><input type="text" placeholder="输入街道、门牌号等详细地址"></div>
+					<div class="choose">
+						<label for="u_checkbox"><input class="choose_default" id="u_checkbox" type="checkbox">设为默认地址</label>
+					</div>
+				</li>
+			</ul>
+		</form>
+		<div class="u_button sure_button"><input type="submit" value="确认地址"></div>
+		<!--不可点击时的按钮状态-->
+		<!-- <div class="u_button sure_button sure_button_noclick"><input type="submit" disabled="disabled" value="确认地址"></div> -->
+	</div>
+	<!--这里是验证错误时的弹出框-->
+	<div class="error_tip">手机号码格式不正确</div>
+</div>
+<script type="text/javascript" src="../../js/lib/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../../js/lib/fastclick.js"></script>
+<script>
+	/*fastclick解决移动端点击延迟的问题*/
+	if ('addEventListener' in document) {
+	    document.addEventListener('DOMContentLoaded', function() {
+	        FastClick.attach(document.body);
+	    }, false);
+	}
+	$('.choose label').click(function(event) {
+		if($('.choose_default').prop('checked')==true){
+			$(this).css('color',"#f3001d");
+		}else{
+			$(this).css('color',"#999");
+		}
+	});
+	/*点击确认按钮*/
+	$('.sure_button').click(function(event) {
+		/*如果表单填写错误，执行以下js,则显示错误提示,显示2s后消失，显示时改变错误提示的内容即可*/
+		if(!$('.error_tip').is(":animated")){
+			$('.error_tip').show(100, function() {
+				$('.error_tip').html('手机号码输入错误');//这里输入要提示的内容
+				$('.error_tip').animate({
+					opacity: 1,
+					},1000, function() {
+					window.setTimeout(function(){
+						$('.error_tip').animate({
+							opacity: 0,
+							},
+							1000, function() {
+							$('.error_tip').hide();
+						});
+					}, 2000)
+				});
+			});		
+		}	
+	});
+</script>
+</body>
+</html>

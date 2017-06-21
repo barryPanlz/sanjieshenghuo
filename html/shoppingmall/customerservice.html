@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0">
+	<title>区块列表</title>
+	<link rel="stylesheet" href="../../css/common/reset.css">
+	<link rel="stylesheet" href="../../css/common/common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/private/hx.css"/>
+	<script src="../../js/lib/rem.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div class="screen">
+	<header>
+		<h1>区块列表</h1>
+		<!--<a class="u_edit" href="#">编辑</a>-->
+	</header>
+	<div class="main">
+		<!--主要内容部分-->
+
+		<div class="hx-box">
+		    <div class="hx-title">
+		        <span>账本</span>
+		        <span>时间戳</span>
+		        <span>分类账散列</span>
+		    </div>
+		
+		    <div class="zichan_wrap">
+				<img style="display: block;margin: 0.5rem auto;" src="../../images/jiazaizhong (1).gif"/>
+		    </div>
+		</div>
+	</div>
+	<footer>
+		<ul>
+			<li>
+				<a href="mallIndex.html">
+					<div><img src="../../images/shouye-ct.png" alt=""></div>
+					<p>合链商城</p>
+				</a>				
+			</li>
+			<li class="nowpage">
+				<a href="customerservice.html">
+					<div><img src="../../images/kefu-xz.png" alt=""></div>
+					<p>区块列表</p>
+				</a>				
+			</li>
+			<li>
+				<a href="querydata.html">
+					<div><img src="../../images/gouwuche-ct.png" alt=""></div>
+					<p>查询数据</p>
+				</a>				
+			</li>
+			<li>
+				<a href="../center/center.html">
+					<div><img src="../../images/gerenzhongxin-ct.png" alt=""></div>
+					<p>我的</p>
+				</a>				
+			</li>
+		</ul>
+	</footer>
+</div>
+<script type="text/javascript" src="../../js/lib/zepto.min.js"></script>
+<script type="text/javascript" src="../../js/lib/fastclick.js"></script>
+<script src="../../js/common/handlebars.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/common/common.js" type="text/javascript" charset="utf-8"></script>
+<script id="tpl" type="text/x-handlebars-template">
+    {{#each this}}
+        <ul class="hx-list clearfix">
+            <li>{{blockHeight}}</li>
+            <li>{{generateTime}}</li>
+            <li>{{blockHash}}</li>
+        </ul>
+    {{/each}}
+</script>
+<script type="text/javascript">
+    $.ajax({
+        type: "post",
+        dataType: 'json',
+        data: {
+            rows: 10
+        },
+        url:  "http://192.168.100.17:1111/shop-service/api/block/getBlockList",
+        async: true,
+        success: function (res) {
+            console.log(res)
+            if (res.errorCode == 0) {
+                data = res.data.list.result;
+
+                var source = $("#tpl").html();
+                var template = Handlebars.compile(source);
+                var context = data;
+                var html = template(context);
+                $(".zichan_wrap").html(html);
+
+
+
+            }else{
+                alert(err.message);
+            }
+        },
+        error: function (err) {
+            console.log(err)
+            alert("获取数据失败!");
+        }
+    });
+
+
+
+</script>
+<script>
+	/*fastclick解决移动端点击延迟的问题*/
+	if ('addEventListener' in document) {
+	    document.addEventListener('DOMContentLoaded', function() {
+	        FastClick.attach(document.body);
+	    }, false);
+	}
+</script>
+</body>
+</html>
