@@ -1,6 +1,6 @@
 潘立志{
 商城：
-商城列表页：shopclassfiy.html
+商城列表页： shopclassfiy.html
 
 
 
